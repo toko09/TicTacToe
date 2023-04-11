@@ -34,6 +34,7 @@ function writeX(buttonID) {
 			"--endgame-zindex",
 			11
 		);
+		root.style.setProperty("--endgame-opacity", 1);
         const winning_msg = document.querySelector(".winning-msg");
         winning_msg.innerHTML = "It's a draw";
 
@@ -123,6 +124,7 @@ function soomeOneWon(line) {
 		"--endgame-zindex",
 		11
 	);
+	root.style.setProperty("--endgame-opacity", 1)
 
 	//winning message
     const winning_msg = document.querySelector(".winning-msg")

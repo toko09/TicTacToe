@@ -5,6 +5,7 @@
   }
 :root{
     --endgame-zindex: -3;
+    --endgame-opacity: 0; /*Added this becaues Z-index doesnt work on safari*/
     --clr-1: #052b2f;
     --clr-2: #073438;
     --clr-3: #0e4b50;
@@ -61,7 +62,9 @@ body{
     background-color:#0e4b50c2 ;
     color: #b0dc93;
     border-radius: 15px;
+    opacity: var(--endgame-opacity);
 }
+
 
 .winning-line {
     position: absolute;
@@ -78,6 +81,8 @@ body{
     color:#b0dc93 ;
     border-radius: 10px;
     z-index: calc( var(--endgame-zindex) + 1);
+    opacity: var(--endgame-opacity);
+
 }
 .restart:hover{
     background-color: #b0dc93 ;
