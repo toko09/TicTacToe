@@ -92,9 +92,10 @@ body{
 .maindiv::after{
     content: "";
     position: absolute;
-    inset: -100rem;
+    inset: -3rem;
     background-color: var(--clr-5);
     border-radius: inherit;
+    border-radius: 20px;
     background: conic-gradient(
         from var(--gradient-angle),
         var(--clr-5),
