@@ -92,7 +92,7 @@ body{
 .maindiv::after{
     content: "";
     position: absolute;
-    inset: -3rem;
+    inset: -2rem;
     background-color: var(--clr-5);
     border-radius: inherit;
     border-radius: 20px;
