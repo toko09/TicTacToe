@@ -1,0 +1,133 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+:root{
+    --endgame-zindex: -3;
+    --clr-1: #052b2f;
+    --clr-2: #073438;
+    --clr-3: #0e4b50;
+    --clr-4: #2d8f85;
+    --clr-5: #637c54;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--clr-2);
+}
+.maindiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    max-width: fit-content;
+    margin: auto;
+    margin-top: 4rem;
+    position: relative;
+    gap: 0.5rem;    
+
+}
+.cell {
+    min-width: 200px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color:#0e4b508c ;
+    
+}
+.fa-o{
+    color: #7e9e69;
+    font-size: 8rem;
+}
+.fa-x{
+    color: #16a1b1;
+    font-size: 8rem;
+}
+.winning-msg{
+    z-index: var(--endgame-zindex);
+    display: grid;
+    place-items: center;
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    color: black;
+    font-size: 3rem;
+    background-color:#0e4b50c2 ;
+    color: #b0dc93;
+    border-radius: 15px;
+}
+
+.winning-line {
+    position: absolute;
+    background-color:#052b2f;
+    z-index: 1;
+    height: 20px;
+}
+.restart{
+    position: absolute;
+    border: none;
+    bottom: 25%;
+    padding: 1rem 2rem;
+    background-color:var(--clr-3);
+    color:#b0dc93 ;
+    border-radius: 10px;
+    z-index: calc( var(--endgame-zindex) + 1);
+}
+.restart:hover{
+    background-color: #b0dc93 ;
+    color: var(--clr-3);
+
+}
+
+
+
+
+.maindiv::before,
+.maindiv::after{
+    content: "";
+    position: absolute;
+    inset: -100rem;
+    background-color: var(--clr-5);
+    border-radius: inherit;
+    background: conic-gradient(
+        from var(--gradient-angle),
+        var(--clr-5),
+        var(--clr-4),
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-5)
+    );
+    animation: rotation 20s linear infinite;
+    z-index: -2;
+}
+.maindiv::after{
+    filter: blur(3rem);
+}
+@keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+      }
+      100% {
+        --gradient-angle: 360deg;
+      }
+}
+
+
+
+
+@media (max-width: 700px){
+    html{
+        font-size: 10px;
+    }
+    .cell{
+        min-width: 100px;
+        min-height: 100px;
+}
+
+}
