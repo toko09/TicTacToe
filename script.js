@@ -25,8 +25,8 @@ function writeX(buttonID) {
 	button.innerHTML =
 		'<i class="fa-solid fa-x"></i>';
 	checkWin();
-	if (turn == 8 && !weHaveWinner) {
-		//check for draw
+	if (turn == 8 && !weHaveWinner) {//check for draw 
+
 		console.log("draw?");
 		const root =
 			document.querySelector(":root");
